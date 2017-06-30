@@ -20,7 +20,6 @@ axios.defaults.headers.common['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR
 // Apply libraries to Vue
 Vue.use(Vuetify)
 Vue.use(VueAxios, axios)
-// Vue.axios.options.emulateJSON = true
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

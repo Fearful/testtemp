@@ -22,8 +22,8 @@
           :rows-per-page-items="rowsPerPage"
         >
         <template slot="items" scope="props">
-          <td class="text-xs-right listing-container" v-on:click="goToDetails(props.item.listing.vin)"><img class="item-image" :src="props.item.listing.image"></td>
-          <td class="text-xs-right listing-container" v-on:click="goToDetails(props.item.listing.vin)">
+          <td class=" listing-container" v-on:click="goToDetails(props.item.listing.vin)"><img class="item-image" :src="props.item.listing.image"></td>
+          <td class=" listing-container" v-on:click="goToDetails(props.item.listing.vin)">
             <table>
               <tr>
                 <h4>{{ props.item.listing.stock_type_name + ' ' + props.item.listing.year_name + ' ' + props.item.listing.make_name + ' ' + props.item.listing.trim_name }}</h4>
@@ -46,7 +46,7 @@
               </tr>
             </table>
           </td>
-          <td class="text-xs-right listing-container">
+          <td class=" listing-container">
             <tr>{{props.item.listing.seller_name}}</tr>
             <tr>
               {{ props.item.listing.city_name + ', ' + props.item.listing.state_name }}
@@ -683,8 +683,6 @@
           params: {
             page: 1,
             per_page: 20
-            // sort_by: sortBy,
-            // ascending: true
           }
         })
       },
@@ -710,4 +708,9 @@
 .listing-container tr h4, .listing-container tr h5
  color #000
  cursor pointer
+ font-weight 600
+.listing-container tr h4
+ font-size 2.1rem
+.listing-container tr h5
+ font-size 3rem
 </style>

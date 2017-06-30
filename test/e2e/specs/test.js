@@ -3,17 +3,15 @@
 
 module.exports = {
   'default e2e tests': function (browser) {
-    // automatically uses dev Server port from /config.index.js
-    // default: http://localhost:8080
-    // see nightwatch.conf.js
     const devServer = browser.globals.devServerURL
 
     browser
       .url(devServer)
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js PWA')
-      .assert.elementCount('img', 1)
+      // ensure the list is loaded
+      .assert.elementPresent('.browseListing')
+      // check all images are loaded 20 images from the cars + hero + logo + avatar = 23
+      .assert.elementCount('img', 23)
       .end()
   }
 }
